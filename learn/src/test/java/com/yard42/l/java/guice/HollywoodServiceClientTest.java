@@ -1,4 +1,4 @@
-package com.yard42.l.java.guice.tutorial;
+package com.yard42.l.java.guice;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
