@@ -2,24 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yard42.l.java.guice</groupId>
+    <groupId>com.yard42.l.java</groupId>
     <artifactId>java-learn</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
+    <name>Java Learn</name>
 
-    <name>java-learn</name>
-
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-            <version>3.0</version>
-        </dependency>
-    </dependencies>
+    <modules>
+      <module>leak</module>
+      <module>guice</module>
+    </modules> 
 </project>
