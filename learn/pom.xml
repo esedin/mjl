@@ -11,5 +11,6 @@
     <modules>
       <module>leak</module>
       <module>guice</module>
+      <module>concurrency</module>
     </modules> 
 </project>
