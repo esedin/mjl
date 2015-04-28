@@ -12,12 +12,8 @@
    <modules>
       <module>leak</module>
       <module>guice</module>
-<<<<<<< HEAD
+      <module>concurrency</module>
       <module>java8</module>
       <module>ejb</module>
    </modules>
-=======
-      <module>concurrency</module>
-    </modules> 
->>>>>>> origin/master
 </project>
