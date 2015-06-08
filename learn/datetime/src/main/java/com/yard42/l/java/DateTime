@@ -1,0 +1,27 @@
+package com.yard42.l.java;
+
+import java.time.LocalDate;
+import java.time.MonthDay;
+
+public class DateTime
+{
+   public static void main(String[] args)
+   {
+      birthday();
+   }
+
+   public static void birthday()
+   {
+      LocalDate birthDate = LocalDate.of(1981, 10, 17);
+      MonthDay birthday = MonthDay.from(birthDate);
+      MonthDay today = MonthDay.from(LocalDate.now());
+
+      if (today.equals(birthday))
+      {
+         System.out.println("Happy birthday!!!");
+      }
+      else {
+         System.out.println(":(");
+      }
+   }
+}

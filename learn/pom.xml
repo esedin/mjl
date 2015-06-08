@@ -15,5 +15,7 @@
       <module>concurrency</module>
       <module>java8</module>
       <module>ejb</module>
+      <module>datetime</module>
+      <module>rest</module>
    </modules>
 </project>
