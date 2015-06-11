@@ -1,17 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <artifactId>resteasy</artifactId>
+   <groupId>com.yard42.l.java</groupId>
+   <version>1.0</version>
    <modelVersion>4.0.0</modelVersion>
 
-   <groupId>com.yard42.l.java</groupId>
-   <artifactId>rest</artifactId>
-   <version>1.0</version>
-   <packaging>pom</packaging>
-   <name>Rest Services</name>
+   <name>RESTEasy</name>
 
-   <modules>
-      <module>jaxRSSecurity</module>
-      <module>restlet</module>
-      <module>resteasy</module>
-   </modules>
 </project>
