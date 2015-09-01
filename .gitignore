@@ -5,3 +5,5 @@ learn/target
 learn/.idea
 /learn/leak/target/
 /learn/guice/target/
+*.jar
+*.class

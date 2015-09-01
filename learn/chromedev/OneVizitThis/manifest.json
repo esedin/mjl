@@ -1,0 +1,17 @@
+{
+  "name": "GawkBlocker",
+  "manifest_version": 2,
+  "version" : "1",
+  "description": "Tired of taking the Nerd Bait? Use GawkBlocker!",
+  "background" : {"scripts": ["background.js"]},
+  "options_page": "index.html",
+  "icons": {
+    "16" : "assets/icon_16.png",
+    "128" : "assets/icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": "assets/icon_16.png",
+    "default_title": "GawkBlocker"
+  },
+  "permissions": ["tabs"]
+}
