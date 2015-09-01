@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "FindA",
+  "description": "This extension search for direct download music and video link",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon"  : "download.png",
+    "default_title" : "Let's search",
+    "default_popup" : "popup.html"
+  },
+  
+  "permissions" : ["clipboardWrite", "clipboardRead", "tabs"],
+  
+  "background" : {
+    "scripts" : ["background.js"]
+  }
+}
