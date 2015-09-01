@@ -5,5 +5,10 @@ learn/target
 learn/.idea
 /learn/leak/target/
 /learn/guice/target/
+<<<<<<< HEAD
 *.jar
 *.class
+=======
+**/target/*
+**/.idea/*
+>>>>>>> origin/master

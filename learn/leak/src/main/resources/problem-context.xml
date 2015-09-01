@@ -10,15 +10,15 @@
   
    <bean id="theQueue" class="java.util.concurrent.LinkedBlockingQueue"/>
 
-   <bean id="orderProducer" class="com.yard42.l.java.concurrency.OrderRecord">
+   <bean id="orderProducer" class="com.yard42.l.java.leak.OrderRecord">
       <constructor-arg ref="theQueue"/>
    </bean>
  
-   <bean id="OrderRecorder" class="com.yard42.l.java.concurrency.OrderFeed">
+   <bean id="OrderRecorder" class="com.yard42.l.java.leak.OrderFeed">
       <constructor-arg ref="theQueue"/>
    </bean>
  
-   <bean id="QueueMonitor" class="com.yard42.l.java.concurrency.OrderQueueMonitor">
+   <bean id="QueueMonitor" class="com.yard42.l.java.leak.OrderQueueMonitor">
       <constructor-arg ref="theQueue"/>
    </bean>
 </beans>

@@ -4,19 +4,14 @@
    <modelVersion>4.0.0</modelVersion>
 
    <groupId>com.yard42.l.java</groupId>
-   <artifactId>java-learn</artifactId>
+   <artifactId>rest</artifactId>
    <version>1.0</version>
    <packaging>pom</packaging>
-   <name>Java Learn</name>
+   <name>Rest Services</name>
 
    <modules>
-      <module>leak</module>
-      <module>guice</module>
-      <module>concurrency</module>
-      <module>java8</module>
-      <module>ejb</module>
-      <module>datetime</module>
-      <module>rest</module>
+      <module>jaxRSSecurity</module>
       <module>restlet</module>
+      <module>resteasy</module>
    </modules>
 </project>
