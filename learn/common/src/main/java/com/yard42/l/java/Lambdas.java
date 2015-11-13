@@ -1,3 +1,5 @@
+package com.yard42.l.java;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.function.*;

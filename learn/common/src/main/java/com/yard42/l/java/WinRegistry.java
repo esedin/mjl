@@ -1,4 +1,4 @@
-/**
+package com.yard42.l.java; /**
  * Pure Java Windows Registry access.
  * Modified by petrucio@stackoverflow(828681) to add support for
  * reading (and writing but not creating/deleting keys) the 32-bits

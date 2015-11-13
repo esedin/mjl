@@ -1,4 +1,4 @@
-/**
+package com.yard42.l.java; /**
  * Java Finder by petrucio@stackoverflow(828681) is licensed under a Creative Commons Attribution 3.0 Unported License.
  * Needs WinRegistry.java. Get it at: http://stackoverflow.com/questions/62289/read-write-to-windows-registry-using-java
  *
@@ -86,7 +86,7 @@ class JavaInfo {
    }
 
    /**
-    * @return Human-readable contents of this JavaInfo instance
+    * @return Humancom.yard42.l.java.JavaInfoe contents of this JavaInfo instance
     ****************************************************************************/
    public String toString() {
       return this.path + ":\n  Version: " + this.version + "\n  Bitness: " + (this.is64bits ? "64-bits" : "32-bits");

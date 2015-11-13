@@ -12,6 +12,7 @@
    <modules>
       <module>leak</module>
       <module>guice</module>
+      <module>common</module>
       <module>concurrency</module>
       <module>java8</module>
       <module>ejb</module>
