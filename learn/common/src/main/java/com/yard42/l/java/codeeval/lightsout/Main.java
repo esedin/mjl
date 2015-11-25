@@ -7,16 +7,14 @@ public class Main
 {
    public static void main(String[] args) throws IOException
    {
-      File file = new File("c:\\s.in");
+      File file = new File(args[0]);
       BufferedReader buffer = new BufferedReader(new FileReader(file));
       String line;
       while ((line = buffer.readLine()) != null)
       {
          String[] parts = line.trim().split(" ");
-         if (parts[0].equals("#")) continue;
          int ncol = Integer.parseInt(parts[0]);
          int nrow = Integer.parseInt(parts[1]);
-         int size = ncol * nrow;
 
          int[] out = new int[nrow * ncol];
 
@@ -31,22 +29,74 @@ public class Main
          int[][] base = prepareBase(ncol, nrow, out);
 
          diagonalize(base);
-         printMatrix(base);
+
          int freeCount = freeVariablesCount(base);
-         if (freeCount == -1) {
+
+         if (freeCount == -1)
+         {
             System.out.println(-1);
          }
-         else {
-            if (freeCount == 0)
+         else
+         {
+            int presses = countPresses(base);
+
+            if (freeCount != 0)
             {
-               System.out.println(countPresses(base));
+               System.out.println(findShortestSolution(base, freeCount, presses));
             }
             else
             {
-               // int outs[][] = getAllSolutions()
+               System.out.println(countPresses(base));
             }
          }
       }
+   }
+
+   private static int findShortestSolution(int[][] base, int freeCount, int presses)
+   {
+      int[][] tmp = new int[freeCount][];
+      int[] answer = new int[base.length];
+      int shortest = presses;
+
+      for (int col = base.length - freeCount; col < base.length; col++)
+      {
+         int[] rowArr = new int[base.length];
+         for (int row = 0; row < base.length; row++)
+         {
+            rowArr[row] = base[row][col];
+         }
+         tmp[base.length - col - 1] = rowArr;
+      }
+
+      for (int i = 0; i < base.length; i++)
+      {
+         answer[i] = base[i][base.length];
+      }
+
+      for (int i = 0; i < tmp.length; i++)
+      {
+         int[] newAnswer = xor(tmp[i], answer);
+//         System.out.println("Answer");
+//         System.out.println(Arrays.toString(answer));
+//         System.out.println("Row");
+//         System.out.println(Arrays.toString(tmp[i]));
+
+         newAnswer[tmp[i].length - freeCount + i] = 1;
+         int count = countOnes(newAnswer) + 1;
+
+         shortest = count < shortest ? count : shortest;
+
+//         System.out.println("newAnswer");
+//         System.out.println(Arrays.toString(newAnswer));
+
+         for (int j = i + 1; j < tmp.length; j++)
+         {
+            count = countOnes(xor(tmp[j], newAnswer)) + 1;
+            shortest = count < shortest ? count : shortest;
+         }
+      }
+
+      return shortest;
    }
 
    private static int countPresses(int[][] base)
@@ -54,9 +104,21 @@ public class Main
       int count = 0;
       int size = base.length;
 
-      for (int i = 0; i < base.length; i++)
+      for (int[] aBase : base)
       {
-         count+=base[i][size];
+         count += aBase[size];
+      }
+
+      return count;
+   }
+
+   private static int countOnes(int[] answer)
+   {
+      int count = 0;
+
+      for (int anAnswer : answer)
+      {
+         count += anAnswer;
       }
 
       return count;
@@ -66,18 +128,18 @@ public class Main
    {
       int count = 0;
 
-      for(int i = 0; i<base.length; i++)
+      for (int[] aBase : base)
       {
          int sum = 0;
 
          for (int j = 0; j < base.length; j++)
          {
-            sum+=base[i][j];
+            sum += aBase[j];
          }
 
          if (sum == 0)
          {
-            if (base[i][base.length] == 1) return -1;
+            if (aBase[base.length] == 1) return -1;
             else
             {
                count++;
@@ -142,15 +204,6 @@ public class Main
       }
 
       return out;
-   }
-
-   public static void printMatrix(int[][] matrix)
-   {
-      for (int i = 0; i < matrix.length; i++)
-      {
-         System.out.println(Arrays.toString(matrix[i]));
-      }
-      System.out.println();
    }
 
    private static int[][] prepareBase(int nrow, int ncol, int[] out)
