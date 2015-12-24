@@ -18,5 +18,6 @@
       <module>ejb</module>
       <module>datetime</module>
       <module>rest</module>
+      <module>frameworks</module>
    </modules>
 </project>
