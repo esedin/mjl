@@ -1,6 +1,4 @@
-package com.yard42.learn.java.algorithms;
-
-import static com.yard42.learn.java.algorithms.Data.*;
+package com.yard42.learn.java;
 
 public class Insertion
 {

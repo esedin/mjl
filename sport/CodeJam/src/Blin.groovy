@@ -4,8 +4,7 @@ def fileName = '..\\B-small-practice.in';
 def input = new FileInputStream(fileName)
 def reader = new BufferedReader(new InputStreamReader(input))
 
-//Skip first redundant line
-def count = reader.readLine().toInteger();
+reader.readLine().toInteger();
 
 reader.eachLine {
    it += '+'

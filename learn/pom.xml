@@ -19,5 +19,6 @@
       <module>datetime</module>
       <module>rest</module>
       <module>frameworks</module>
+      <module>algorithms</module>
    </modules>
 </project>

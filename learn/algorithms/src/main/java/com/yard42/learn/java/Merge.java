@@ -1,7 +1,7 @@
-package com.yard42.learn.java.algorithms;
+package com.yard42.learn.java;
 
-import static com.yard42.learn.java.algorithms.Data.buildRandomArray;
-import static com.yard42.learn.java.algorithms.Data.printArray;
+import static com.yard42.learn.java.Data.buildRandomArray;
+import static com.yard42.learn.java.Data.printArray;
 
 public class Merge
 {
@@ -10,7 +10,7 @@ public class Merge
       int[] toSortArray = buildRandomArray(10);
       printArray(toSortArray);
 
-      mergeSort(toSortArray, 1, toSortArray.length);
+      mergeSort(toSortArray, 0, toSortArray.length - 1);
 
       printArray(toSortArray);
    }
@@ -21,7 +21,7 @@ public class Merge
       {
          int middle = (head + tail) / 2;
          mergeSort(array, head, middle);
-         mergeSort(array, middle, tail);
+         mergeSort(array, middle+1, tail);
          merge(array, head, middle, tail);
       }
    }
@@ -34,7 +34,7 @@ public class Merge
 
       int[] buffer = new int[tail - head + 1];
 
-      while (pos1 < middle && pos2 < tail)
+      while (pos1 <= middle && pos2 <= tail)
       {
          if (array[pos1] < array[pos2])
          {
@@ -47,7 +47,7 @@ public class Merge
       }
 
       while (pos2 <= tail) buffer[pos3++] = array[pos2++];
-      while (pos1 <= middle) buffer[pos3++] = array[pos2++];
+      while (pos1 <= middle) buffer[pos3++] = array[pos1++];
 
       for (int i = 0; i < buffer.length; i++)
       {

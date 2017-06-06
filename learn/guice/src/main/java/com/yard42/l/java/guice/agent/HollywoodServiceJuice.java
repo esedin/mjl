@@ -1,4 +1,4 @@
-package com.yard42.l.java.guice;
+package com.yard42.l.java.guice.agent;
 
 import com.google.inject.Inject;
 
