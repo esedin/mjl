@@ -1,0 +1,7 @@
+To Test
+
+curl -i http://pc-esed:8080/sse/resources/beats
+
+In browser
+
+http://pc-esed:8080/sse/index.html
