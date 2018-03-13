@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <parent>
-      <artifactId>java-learn</artifactId>
+      <artifactId>learn</artifactId>
       <groupId>com.yard42.l.java</groupId>
       <version>1.0</version>
       <relativePath>../pom.xml</relativePath>
@@ -48,7 +48,7 @@
       <dependency>
          <groupId>org.jooq</groupId>
          <artifactId>jool</artifactId>
-         <version>0.9.8-SNAPSHOT</version>
+         <version>0.9.8</version>
       </dependency>
       <dependency>
          <groupId>com.yard42.l.java</groupId>

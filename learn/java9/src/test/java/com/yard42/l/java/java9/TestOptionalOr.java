@@ -10,7 +10,7 @@ import org.junit.Test;
 public class TestOptionalOr
 {
    @Test
-   public void or()
+   public void orTest()
    {
       int message = this.answer().map(Integer::parseInt).
          or(this::defaultAnswer).get();

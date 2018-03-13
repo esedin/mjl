@@ -1,43 +1,61 @@
-/*
- * This module is part of the CSF experimental system
- * Copyright (c) Soft Computer Consultants, Inc.
- * All Rights Reserved
- * This document contains unpublished, confidential and proprietary
- * information of Soft Computer Consultants, Inc. No disclosure or use of
- * any portion of the contents of these materials may be made without the
- * express written consent of Soft Computer Consultants, Inc.
- */
 package com.yard42.l.java.java8;
 
-import java.time.ZoneId;
+import static com.yard42.l.java.java8.TestUtils.assertStreamEquals;
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Stream;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class StreamsTest
 {
-   private static List<String> getList()
-   {
-      List<String> stringCollection = new ArrayList<>();
-      stringCollection.add("ddd2");
-      stringCollection.add("aaa2");
-      stringCollection.add("bbb1");
-      stringCollection.add("aaa1");
-      stringCollection.add("bbb3");
-      stringCollection.add("ccc");
-      stringCollection.add("bbb2");
-      stringCollection.add("ddd1");
+   private List<String> collectionStr;
 
-      return stringCollection;
+   @Before
+   public void initCollection()
+   {
+      collectionStr = new ArrayList<>();
+      collectionStr.add("uno");
+      collectionStr.add("dos");
+      collectionStr.add("tres");
+      collectionStr.add("cuatro");
+      collectionStr.add("cinco");
+      collectionStr.add("seis");
+      collectionStr.add("siete");
+      collectionStr.add("ocho");
    }
 
    @Test
-   public void streamTest()
+   public void filterTest()
    {
-      getList().stream().filter(s -> s.startsWith("a")).forEach(System.out::println);
-
-      System.out.println(ZoneId.getAvailableZoneIds());
+      Stream<String> filtered = collectionStr.stream().filter((s) -> s.startsWith("s"));
+      assertStreamEquals(
+         filtered,
+         Stream.of("seis", "siete")
+      );
    }
 
+   @Test
+   public void mapTest()
+   {
+      Stream<String> mapped = collectionStr.stream().map(String::toUpperCase);
+      assertStreamEquals(
+         mapped,
+         Stream.of("UNO", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO")
+      );
+   }
+
+   @Test
+   public void reduceTest()
+   {
+      Optional<String> reduced = collectionStr.stream().sorted().reduce((s1, s2) -> s1 + "#" + s2);
+
+      reduced.ifPresent(System.out::println);
+
+      assertEquals(reduced.get(), "cinco#cuatro#dos#ocho#seis#siete#tres#uno");
+   }
 }
