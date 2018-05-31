@@ -1,4 +1,6 @@
-package com.yard42.learn.java;
+package com.yard42.learn.java.sort;
+
+import com.yard42.learn.java.DataUtils;
 
 public class Insertion
 {
@@ -6,8 +8,8 @@ public class Insertion
    {
       int j = 0;
 
-      int[] toSortArray = Data.buildRandomArray(10);
-      Data.printArray(toSortArray);
+      int[] toSortArray = DataUtils.buildRandomArray(10);
+      DataUtils.printArray(toSortArray);
 
       for (int i = 1; i < toSortArray.length; i++)
       {
@@ -23,6 +25,6 @@ public class Insertion
          toSortArray[j + 1] = current;
       }
 
-      Data.printArray(toSortArray);
+      DataUtils.printArray(toSortArray);
    }
 }

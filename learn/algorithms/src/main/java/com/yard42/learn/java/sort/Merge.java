@@ -1,7 +1,7 @@
-package com.yard42.learn.java;
+package com.yard42.learn.java.sort;
 
-import static com.yard42.learn.java.Data.buildRandomArray;
-import static com.yard42.learn.java.Data.printArray;
+import static com.yard42.learn.java.DataUtils.buildRandomArray;
+import static com.yard42.learn.java.DataUtils.printArray;
 
 public class Merge
 {

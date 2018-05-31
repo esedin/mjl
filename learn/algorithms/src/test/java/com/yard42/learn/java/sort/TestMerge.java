@@ -1,4 +1,4 @@
-package com.yard42.learn.java;
+package com.yard42.learn.java.sort;
 
 import java.util.Arrays;
 
@@ -9,6 +9,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 import com.yard42.l.java.Repeat;
 import com.yard42.l.java.TestRunner;
+import com.yard42.learn.java.DataUtils;
 
 @RunWith(TestRunner.class)
 public class TestMerge
@@ -17,7 +18,7 @@ public class TestMerge
    @Repeat(10)
    public void testMergeSort()
    {
-      int[] arrayToSort = Data.buildRandomArray(30);
+      int[] arrayToSort = DataUtils.buildRandomArray(30);
       int[] arrayToSort1 = Arrays.copyOf(arrayToSort, arrayToSort.length);
 
       Merge.mergeSort(arrayToSort, 0, arrayToSort.length - 1);
